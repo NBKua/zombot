@@ -22,7 +22,8 @@ from game_actors_and_handlers.roulettes import RouletteRoller, \
     GameResultHandler
 from game_actors_and_handlers.wood_graves import WoodPicker, \
     WoodTargetSelecter
-from game_actors_and_handlers.cook_graves import BrewPicker
+from game_actors_and_handlers.cook_graves import BrewPicker, \
+    CookBot
 from game_actors_and_handlers.digger_graves import BagsPicker, \
     TimeGainEventHandler
 from game_actors_and_handlers.stone_graves import StonePicker, \
@@ -399,6 +400,7 @@ class Game():
             WoodTargetSelecter,
             StonePicker,
             StoneTargetSelecter,
+            #CookBot,
         ]
         self.__actors = []
         for actor_class in actor_classes:
