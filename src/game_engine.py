@@ -262,7 +262,7 @@ class Game():
 
     CLIENT_VERSION = long(1362084734)
 
-    def __init__(self, site,
+    def __init__(self, site, curSelUser,
                   user_prompt, game_item_reader=None, gui_input=None):
         logger.info('Логинимся...')
 
@@ -286,6 +286,7 @@ class Game():
         self.__receive_gifts_with_messages = False
         self.__receive_non_free_gifts = False
         self.__gui_input = gui_input
+        self.__curSelUser = curSelUser
 
     def select_plant_seed(self):
         seed_reader = GameSeedReader(self.__itemReader)
