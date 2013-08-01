@@ -60,7 +60,7 @@ def get_site(gui_input):
     setup_file_logging(strip_special(selected_user), log_level)
     settings.setUser(selected_user)
     site = Site(settings)
-    return site
+    return site, selected_user
 
 
 def run_game(gui_input=None):
@@ -68,10 +68,11 @@ def run_game(gui_input=None):
 
     logger.info('Выбираем пользователя...')
 
-    site = get_site(gui_input)
+    csu = get_site(gui_input)
+    site = csu[0]
+    curSelUser = csu[1]
 
-
-    Game(site, UserPrompt(gui_input), gui_input=gui_input).start()
+    Game(site, curSelUser, UserPrompt(gui_input), gui_input=gui_input).start()
 
 
 MyLogger = None
